@@ -21,8 +21,13 @@ loginLink.addEventListener('click', () => {
 
 btnPopup.addEventListener('click', () => {
     wrapper.classList.add('active-popup');
-    wrapper.classList.remove('active'); // Сброс к форме логина
+    wrapper.classList.remove('active');
     document.addEventListener('click', handleClickOutside);
+});
+
+iconClose.addEventListener('click', () => {
+    wrapper.classList.remove('active-popup', 'active');
+    document.removeEventListener('click', handleClickOutside);
 });
 
 iconClose.addEventListener('click', () => {
